@@ -1,0 +1,563 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Listado de usuarios · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="user_remove.html" />
+    
+    
+    <link rel="prev" href="app.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    Introducción
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="installation.html">
+            
+                <a href="installation.html">
+            
+                    
+                    Instalación
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="app.html">
+            
+                <a href="app.html">
+            
+                    
+                    App
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.4" data-path="users_list.html">
+            
+                <a href="users_list.html">
+            
+                    
+                    Listado de usuarios
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="user_remove.html">
+            
+                <a href="user_remove.html">
+            
+                    
+                    Eliminar usuario
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="user_edit.html">
+            
+                <a href="user_edit.html">
+            
+                    
+                    Editar usuario
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="user_create.html">
+            
+                <a href="user_create.html">
+            
+                    
+                    Crear usuario
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="." >Listado de usuarios</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="listado-de-usuarios">Listado de Usuarios</h1>
+<h2 id="desarrollo">Desarrollo</h2>
+<h3 id="definir-store">Definir store</h3>
+<p>Primero vamos a reestructurar el store generado autom&#xE1;ticamente. Para ello, creamos la carpeta <code>src/store</code>, moveremos el fichero <code>store.js</code> a la carpeta y se renombrar&#xE1; a <code>index.js</code>.</p>
+<h4 id="m&#xF3;dulo-userlist">M&#xF3;dulo <code>userList</code></h4>
+<p>Creamos el m&#xF3;dulo del listado de usuario (<code>src/store/usersList.js</code>).</p>
+<p><strong>src/store/usersList.js</strong></p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">const</span> mockData = [
+  {
+    name: <span class="hljs-string">&apos;Daniela Diaz&apos;</span>,
+    email: <span class="hljs-string">&apos;daniela.diaz@example.com&apos;</span>
+  },
+  {
+    name: <span class="hljs-string">&apos;Arthur Jensen&apos;</span>,
+    email: <span class="hljs-string">&apos;arthur.jensen@example.com&apos;</span>
+  }
+]
+
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> {
+  namespaced: <span class="hljs-literal">true</span>,
+  state: {
+    list: <span class="hljs-literal">undefined</span>
+  },
+  mutations: {
+    SET_LIST (state, list) {
+      state.list = list
+    },
+    EMPTY_LIST (state) {
+      state.id = <span class="hljs-literal">undefined</span>
+    }
+  },
+  actions: {
+    load ({ commit }) {
+      <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Promise</span>(resolve =&gt; {
+        commit(<span class="hljs-string">&apos;SET_LIST&apos;</span>, mockData)
+        resolve()
+      })
+    }
+  },
+  getters: {
+    items: state =&gt; state.list
+  }
+}
+</code></pre>
+<h4 id="store">Store</h4>
+<p>Actualizamos el fichero <code>src/store/index.js</code> para cargar el m&#xF3;dulo creado.</p>
+<p><strong>src/store/index.js</strong></p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">import</span> Vue <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;vue&apos;</span>
+<span class="hljs-keyword">import</span> Vuex <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;vuex&apos;</span>
+
+<span class="hljs-keyword">import</span> usersList <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;./usersList&apos;</span>
+
+Vue.use(Vuex)
+
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-keyword">new</span> Vuex.Store({
+  modules: {
+    usersList
+  }
+})
+</code></pre>
+<h3 id="a&#xF1;adir-componente-userlist">A&#xF1;adir Componente <code>UserList</code></h3>
+<p>A continuaci&#xF3;n crearemos el componente <code>UserList</code> encargado de mostrar el listado de los usuarios. Para ello se crea el fichero <code>src/components/UsersList.vue</code>.</p>
+<p><strong>src/components/UsersList.vue</strong></p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">template</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>Users List<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span>
+</code></pre>
+<p>Se debe modificar <code>src/views/home.vue</code> para que cargue el componente <code>UsersList</code>.</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">template</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;home&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">UsersList</span> /&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="javascript">
+<span class="hljs-comment">// @ is an alias to /src</span>
+<span class="hljs-keyword">import</span> UsersList <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;@/components/UsersList.vue&apos;</span>
+
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> {
+  name: <span class="hljs-string">&apos;home&apos;</span>,
+  components: {
+    UsersList
+  }
+}
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+</code></pre>
+<p><img src="img/User_lists_draft.png" alt="component usersList View"></p>
+<h3 id="componente-userlist">Componente <code>UserList</code></h3>
+<p>A continuaci&#xF3;n modificaremos el componente <code>UserList</code> para implementar las funcionalidades encargadas de mostrar el listado de los usuarios.</p>
+<p><strong>src/components/UsersList.vue</strong></p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">template</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">v-data-table</span>
+    <span class="hljs-attr">:headers</span>=<span class="hljs-string">&quot;headers&quot;</span>
+    <span class="hljs-attr">:items</span>=<span class="hljs-string">&quot;users&quot;</span>
+    <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;elevation-1&quot;</span>
+  &gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">template</span> <span class="hljs-attr">slot</span>=<span class="hljs-string">&quot;items&quot;</span> <span class="hljs-attr">slot-scope</span>=<span class="hljs-string">&quot;props&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>{{ props.item.name }}<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>{{ props.item.email }}<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">td</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;justify-center layout px-0&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">v-icon</span>
+          <span class="hljs-attr">small</span>
+          <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;mr-2&quot;</span>
+          @<span class="hljs-attr">click</span>=<span class="hljs-string">&quot;onEdit(props.item)&quot;</span>
+        &gt;</span>
+          edit
+        <span class="hljs-tag">&lt;/<span class="hljs-name">v-icon</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">v-icon</span>
+          <span class="hljs-attr">small</span>
+          @<span class="hljs-attr">click</span>=<span class="hljs-string">&quot;onRemove(props.item)&quot;</span>
+        &gt;</span>
+          delete
+        <span class="hljs-tag">&lt;/<span class="hljs-name">v-icon</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">v-data-table</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="javascript">
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> {
+  data () {
+    <span class="hljs-keyword">return</span> {
+      headers: [
+        {
+          text: <span class="hljs-string">&apos;Full Name&apos;</span>,
+          align: <span class="hljs-string">&apos;left&apos;</span>,
+          sortable: <span class="hljs-literal">true</span>,
+          value: <span class="hljs-string">&apos;name&apos;</span>
+        },
+        {
+          text: <span class="hljs-string">&apos;Email&apos;</span>,
+          align: <span class="hljs-string">&apos;left&apos;</span>,
+          sortable: <span class="hljs-literal">true</span>,
+          value: <span class="hljs-string">&apos;email&apos;</span>
+        },
+        {
+          text: <span class="hljs-string">&apos;Actions&apos;</span>,
+          align: <span class="hljs-string">&apos;center&apos;</span>,
+          sortable: <span class="hljs-literal">false</span>
+        }
+      ]
+    }
+  },
+  methods: {
+    onEdit (user) {
+      <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;edit&apos;</span>, user)
+    },
+    onRemove (user) {
+      <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;remove&apos;</span>, user)
+    }
+  },
+  computed: {
+    users: {
+      get () {
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.$store.getters[<span class="hljs-string">&apos;usersList/items&apos;</span>]
+      }
+    }
+  },
+  mounted () {
+    <span class="hljs-keyword">this</span>.$store.dispatch(<span class="hljs-string">&apos;usersList/load&apos;</span>)
+  }
+}
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+</code></pre>
+<p><img src="img/Component_UsersList.png" alt="component usersList View"></p>
+<h3 id="cargar-datos-del-servicio-rest">Cargar datos del servicio REST</h3>
+<h4 id="instalar-axios">Instalar axios</h4>
+<p>Se utilizar&#xE1; <code>axios</code> para gestionar las peticiones HTTP, ya que nos permitir&#xE1; utilizar las peticiones HTTP como <code>Promise</code>.</p>
+<pre><code class="lang-shell">$ npm install --save axios
+npm WARN ajv-keywords@2.1.1 requires a peer of ajv@^5.0.0 but none is installed. You must install peer dependencies yourself.
+npm WARN optional SKIPPING OPTIONAL DEPENDENCY: fsevents@1.2.4 (node_modules/fsevents):
+npm WARN notsup SKIPPING OPTIONAL DEPENDENCY: Unsupported platform for fsevents@1.2.4: wanted {&quot;os&quot;:&quot;darwin&quot;,&quot;arch&quot;:&quot;any&quot;} (current: {&quot;os&quot;:&quot;linux&quot;,&quot;arch&quot;:&quot;x64&quot;})
+
++ axios@0.18.0
+added 1 package in 9.383s
+</code></pre>
+<h4 id="configuraci&#xF3;n-de-axios-y-carga-de-datos">Configuraci&#xF3;n de axios y carga de datos</h4>
+<p>Se crea el fichero <code>api.js</code> para definir la configuraci&#xF3;n de la conexi&#xF3;n.</p>
+<p><strong>src/api.js</strong></p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">import</span> axios <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;axios&apos;</span>
+
+<span class="hljs-keyword">const</span> instance = axios.create({
+  baseURL: <span class="hljs-string">&apos;https://my-user-manager.herokuapp.com/&apos;</span>
+})
+
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> getUsers = () =&gt; {
+  <span class="hljs-keyword">return</span> instance.get(<span class="hljs-string">&apos;/users&apos;</span>)
+}
+
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> instance
+</code></pre>
+<p>Y se actualiza el m&#xF3;dulo del store para reemplazar los datos de prueba con los datos obtenidos de la petici&#xF3;n <code>GET</code> definida.</p>
+<p><strong>src/store/usersList.js</strong></p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">import</span> { getUsers } <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;@/api&apos;</span>
+
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> {
+  ...
+  state: {
+    ...
+    loading: <span class="hljs-literal">false</span>
+  },
+  mutations: {
+    ...
+    LOADING (state, value) {
+      state.loading = value
+    }
+  },
+  actions: {
+    load ({ commit }) {
+      commit(<span class="hljs-string">&apos;LOADING&apos;</span>, <span class="hljs-literal">true</span>)
+      <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Promise</span>(resolve =&gt; {
+        getUsers()
+          .then(response =&gt; {
+            commit(<span class="hljs-string">&apos;SET_LIST&apos;</span>, response.data)
+            commit(<span class="hljs-string">&apos;LOADING&apos;</span>, <span class="hljs-literal">false</span>)
+            resolve()
+          })
+      })
+    }
+  },
+  getters: {
+    ...
+    loading: state =&gt; state.loading
+  }
+}
+</code></pre>
+<p>Se actualiza el componente para mostrar al usuario de forma visual que se est&#xE1;n cargando los datos, para ello se emplea la propiedad loading del componente de vuetify,</p>
+<p><strong>src/components/UsersList.vue</strong></p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">template</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">v-data-table</span>
+    <span class="hljs-attr">...</span>
+    <span class="hljs-attr">:loading</span>=<span class="hljs-string">&quot;loading&quot;</span>
+  &gt;</span>
+  ...
+<span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span>
+...
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="actionscript">
+export <span class="hljs-keyword">default</span> {
+  ...
+  computed: {
+    ...
+    loading: {
+      <span class="hljs-keyword">get</span> () {
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.$store.getters[<span class="hljs-string">&apos;usersList/loading&apos;</span>]
+      }
+    }
+  },
+  ...
+}
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+</code></pre>
+<p><img src="img/Loading_Users.png" alt="loading Users"></p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="app.html" class="navigation navigation-prev " aria-label="Previous page: App">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="user_remove.html" class="navigation navigation-next " aria-label="Next page: Eliminar usuario">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Listado de usuarios","level":"1.4","depth":1,"next":{"title":"Eliminar usuario","level":"1.5","depth":1,"path":"user_remove.md","ref":"user_remove.md","articles":[]},"previous":{"title":"App","level":"1.3","depth":1,"path":"app.md","ref":"app.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"users_list.md","mtime":"2018-11-26T18:37:36.699Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-11-26T18:37:49.579Z"},"basePath":".","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="gitbook/gitbook.js"></script>
+    <script src="gitbook/theme.js"></script>
+    
+        
+        <script src="gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

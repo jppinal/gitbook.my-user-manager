@@ -1,0 +1,496 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Instalación · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="app.html" />
+    
+    
+    <link rel="prev" href="./" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    Introducción
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.2" data-path="installation.html">
+            
+                <a href="installation.html">
+            
+                    
+                    Instalación
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="app.html">
+            
+                <a href="app.html">
+            
+                    
+                    App
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="users_list.html">
+            
+                <a href="users_list.html">
+            
+                    
+                    Listado de usuarios
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="user_remove.html">
+            
+                <a href="user_remove.html">
+            
+                    
+                    Eliminar usuario
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="user_edit.html">
+            
+                <a href="user_edit.html">
+            
+                    
+                    Editar usuario
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="user_create.html">
+            
+                <a href="user_create.html">
+            
+                    
+                    Crear usuario
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="." >Instalación</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="instalaci&#xF3;n">Instalaci&#xF3;n</h1>
+<h2 id="vue-cli">vue cli</h2>
+<p>Se requiere instalar previamente la version 3 de <a href="https://cli.vuejs.org/" target="_blank">vue cli</a>.</p>
+<pre><code class="lang-shell">$ sudo npm install -g @vue/cli
+</code></pre>
+<h2 id="creaci&#xF3;n-del-proyecto-vue">Creaci&#xF3;n del proyecto vue</h2>
+<p>Una vez instalado podemos generar el nuevo proyecto <a href="https://vuetifyjs.com/en/" target="_blank">vue</a> con el comando <code>vue create</code>.</p>
+<pre><code class="lang-shell">$ vue create example
+
+Vue CLI v3.1.3
+? Please pick a preset: (Use arrow keys)
+  default (babel, eslint)
+&#x276F; Manually select features
+
+
+Vue CLI v3.1.3
+? Please pick a preset: Manually select features
+? Check the features needed for your project: Babel, Router, Vuex, Linter
+? Use history mode for router? (Requires proper server setup for index fallback in production) No
+? Pick a linter / formatter config: Standard
+? Pick additional lint features: Lint on save
+? Where do you prefer placing config for Babel, PostCSS, ESLint, etc.? In dedicated config files
+? Save this as a preset for future projects? No
+
+
+Vue CLI v3.1.3
+&#x2728;  Creating project in _path_/example.
+&#x2699;  Installing CLI plugins. This might take a while...
+
+
+&gt; yorkie@2.0.0 install _path_/example/node_modules/yorkie
+&gt; node bin/install.js
+
+setting up Git hooks
+can&apos;t find .git directory, skipping Git hooks installation
+added 1109 packages in 21.611s
+&#x1F680;  Invoking generators...
+&#x1F4E6;  Installing additional dependencies...
+
+added 54 packages, updated 2 packages and moved 5 packages in 10.913s
+&#x2693;  Running completion hooks...
+
+&#x1F4C4;  Generating README.md...
+
+&#x1F389;  Successfully created project example.
+&#x1F449;  Get started with the following commands:
+
+ $ cd example
+ $ npm run serve
+</code></pre>
+<p>El proyecto generado contiene dos ventanas <em>Home</em> y <em>About</em> controladas por <a href="https://router.vuejs.org/" target="_blank">vue router</a> y un store controlado por <a href="https://vuex.vuejs.org/guide/" target="_blank">vuex</a>.</p>
+<p><strong>Home</strong></p>
+<p><img src="img/after_install_Home.png" alt="after install Home"></p>
+<p><strong>About</strong></p>
+<p><img src="img/after_install_About.png" alt="after install About"></p>
+<p>Estructura inicial de carpetas creada por el vue.</p>
+<p><img src="img/after_install_folder.png" alt="after install folder"></p>
+<p>El fichero principal de la aplicaci&#xF3;n vue se encuentra en <code>src/main.js</code>. En &#xE9;ste fichero se configura y crea el objeto vue.</p>
+<p><strong>src/main.js</strong></p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">import</span> Vue <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;vue&apos;</span>
+<span class="hljs-keyword">import</span> App <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;./App.vue&apos;</span>
+<span class="hljs-keyword">import</span> router <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;./router&apos;</span>
+<span class="hljs-keyword">import</span> store <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;./store&apos;</span>
+
+Vue.config.productionTip = <span class="hljs-literal">false</span>
+
+<span class="hljs-keyword">new</span> Vue({
+  router,
+  store,
+  render: h =&gt; h(App)
+}).$mount(<span class="hljs-string">&apos;#app&apos;</span>)
+</code></pre>
+<h2 id="instalar-vuetify">Instalar Vuetify</h2>
+<p>En este caso se ha escogido <a href="https://vuetifyjs.com/en/" target="_blank">vuetify</a> como framework de componentes ya que est&#xE1; basado en <em>Material Design</em>.</p>
+<p><img src="img/vuetify.png" alt="vuetify"></p>
+<p>El nuevo cli de vue facilita la instalaci&#xF3;n de <a href="https://vuetifyjs.com/en/" target="_blank">vuetify</a>.</p>
+<pre><code class="lang-shell">$ vue add vuetify
+
+&#x1F4E6;  Installing vue-cli-plugin-vuetify...
+
+
+&gt; yorkie@2.0.0 install _path_/example/node_modules/yorkie
+&gt; node bin/install.js
+
+setting up Git hooks
+can&apos;t find .git directory, skipping Git hooks installation
++ vue-cli-plugin-vuetify@0.4.6
+added 1164 packages in 12s
+&#x2714;  Successfully installed plugin: vue-cli-plugin-vuetify
+
+? Choose a preset: Configure (advanced)
+? Use a pre-made template? (will replace App.vue and HelloWorld.vue) No
+? Use custom theme? No
+? Use custom properties (CSS variables)? No
+? Select icon font Material Icons
+? Use fonts as a dependency (for Electron or offline)? No
+? Use a-la-carte components? Yes
+? Select locale English
+
+&#x1F680;  Invoking generator for vue-cli-plugin-vuetify...
+&#x1F4E6;  Installing additional dependencies...
+
+added 12 packages in 7.974s
+&#x2693;  Running completion hooks...
+
+&#x2714;  Successfully invoked generator for plugin: vue-cli-plugin-vuetify
+   The following files have been updated / added:
+
+     src/plugins/vuetify.js
+     package-lock.json
+     package.json
+     public/index.html
+     src/main.js
+
+   You should review these changes with git diff and commit them.
+</code></pre>
+<p>La estructura del proyecto una vez a&#xF1;adido <a href="https://vuetifyjs.com/en/" target="_blank">vuetify</a> ser&#xED;a la siguiente.</p>
+<p><img src="img/add_vuetify_folder.png" alt="Add vuetify folder"></p>
+<p>Al ejecutarse encontramos un error detectado por <a href="https://eslint.org/" target="_blank">ESLint</a>.</p>
+<pre><code class="lang-shell">npm run serve
+
+&gt; example@0.1.0 serve _path_/example
+&gt; vue-cli-service serve
+
+ INFO  Starting development server...
+ 98% after emitting CopyPlugin
+
+ WARNING  Compiled with 1 warnings
+
+Module Warning (from ./node_modules/eslint-loader/index.js):
+error: Unexpected trailing comma (comma-dangle) at src/plugins/vuetify.js:6:17:
+  4 |
+  5 | Vue.use(Vuetify, {
+&gt; 6 |   iconfont: &apos;md&apos;,
+    |                 ^
+  7 | })
+  8 |
+
+
+1 error found.
+1 error potentially fixable with the `--fix` option.
+
+You may use special comments to disable some warnings.
+Use // eslint-disable-next-line to ignore the next line.
+Use /* eslint-disable */ to ignore all warnings in a file.
+
+  App running at:
+  - Local:   http://localhost:8080/
+  - Network: http://192.168.0.24:8080/
+
+  Note that the development build is not optimized.
+  To create a production build, run npm run build.
+</code></pre>
+<h3 id="eslint">ESLint</h3>
+<p>Gracias al comando <code>lint</code> configurado en el proyecto <a href="https://vuetifyjs.com/en/" target="_blank">vue</a> podemos controlar y arreglar los errores de calidad de c&#xF3;digo en el proyecto.</p>
+<pre><code class="lang-shell">$ npm run lint
+
+&gt; example@0.1.0 lint _path_/example
+&gt; vue-cli-service lint
+
+The following files have been auto-fixed:
+
+  src/plugins/vuetify.js
+
+ DONE  All lint errors auto-fixed.
+</code></pre>
+<pre><code class="lang-shell">$ npm run serve
+
+&gt; example@0.1.0 serve _path_/example
+&gt; vue-cli-service serve
+
+ INFO  Starting development server...
+ 98% after emitting CopyPlugin
+
+ DONE  Compiled successfully in 14557ms
+
+
+  App running at:
+  - Local:   http://localhost:8080/
+  - Network: http://192.168.0.24:8080/
+
+  Note that the development build is not optimized.
+  To create a production build, run npm run build.
+</code></pre>
+<p><img src="img/Vuetified_App.png" alt="vuetified App"></p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="./" class="navigation navigation-prev " aria-label="Previous page: Introducción">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="app.html" class="navigation navigation-next " aria-label="Next page: App">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Instalación","level":"1.2","depth":1,"next":{"title":"App","level":"1.3","depth":1,"path":"app.md","ref":"app.md","articles":[]},"previous":{"title":"Introducción","level":"1.1","depth":1,"path":"README.md","ref":"README.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"installation.md","mtime":"2018-11-26T18:39:18.748Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-11-26T18:37:49.579Z"},"basePath":".","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="gitbook/gitbook.js"></script>
+    <script src="gitbook/theme.js"></script>
+    
+        
+        <script src="gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
