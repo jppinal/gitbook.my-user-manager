@@ -65,6 +65,3 @@ export default {
 }
 </script>
 ```
-
-### Mensaje de confirmación
----- Para nota ----
