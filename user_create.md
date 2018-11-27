@@ -1,6 +1,6 @@
 # Crear Usuario
 
-## Ejercicio
+## Descripción
 
 Utilizar el formulario creado para crear usuarios utilizado el servicio REST `PUT /users/{userId}`.
 

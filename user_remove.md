@@ -1,6 +1,6 @@
 # Eliminar Usuario
 
-## Ejercicio
+## Descripción
 
 Eliminar un usuario utilizado el servicio REST a través de la petición `DELETE /users/{userId}`.
 

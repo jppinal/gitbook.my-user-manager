@@ -180,6 +180,19 @@
             
         </li>
     
+        <li class="chapter " data-level="1.8" data-path="deploy.html">
+            
+                <a href="deploy.html">
+            
+                    
+                    Despliegue
+            
+                </a>
+            
+
+            
+        </li>
+    
 
     
 
@@ -226,6 +239,12 @@
                                 <section class="normal markdown-section">
                                 
                                 <h1 id="listado-de-usuarios">Listado de Usuarios</h1>
+<h1 id="descripci&#xF3;n">Descripci&#xF3;n</h1>
+<p>Se va a componer una tabla que muestre el listado de usarios del recurso <code>users</code> del servicio REST publicado en la direcci&#xF3;n,</p>
+<p><a href="https://my-user-manager.herokuapp.com/api-docs/" target="_blank">https://my-user-manager.herokuapp.com/api-docs/</a></p>
+<p><img src="img/api.png" alt="api"></p>
+<p>Se emplear&#xE1; el componente <code>&lt;v-data-table&gt;</code> de vuetify.</p>
+<p><img src="img/Loading_Users.png" alt="loading Users"></p>
 <h2 id="desarrollo">Desarrollo</h2>
 <h3 id="definir-store">Definir store</h3>
 <p>Primero vamos a reestructurar el store generado autom&#xE1;ticamente. Para ello, creamos la carpeta <code>src/store</code>, moveremos el fichero <code>store.js</code> a la carpeta y se renombrar&#xE1; a <code>index.js</code>.</p>
@@ -402,6 +421,8 @@ npm WARN notsup SKIPPING OPTIONAL DEPENDENCY: Unsupported platform for fsevents@
 added 1 package in 9.383s
 </code></pre>
 <h4 id="configuraci&#xF3;n-de-axios-y-carga-de-datos">Configuraci&#xF3;n de axios y carga de datos</h4>
+<p>Los datos del listado de usuario se sirven a trav&#xE9;s de la petici&#xF3;n <code>GET /users</code>.</p>
+<p><img src="img/GET_users.png" alt="GET users"></p>
 <p>Se crea el fichero <code>api.js</code> para definir la configuraci&#xF3;n de la conexi&#xF3;n.</p>
 <p><strong>src/api.js</strong></p>
 <pre><code class="lang-javascript"><span class="hljs-keyword">import</span> axios <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;axios&apos;</span>
@@ -520,7 +541,7 @@ export <span class="hljs-keyword">default</span> {
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Listado de usuarios","level":"1.4","depth":1,"next":{"title":"Eliminar usuario","level":"1.5","depth":1,"path":"user_remove.md","ref":"user_remove.md","articles":[]},"previous":{"title":"App","level":"1.3","depth":1,"path":"app.md","ref":"app.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"users_list.md","mtime":"2018-11-26T18:37:36.699Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-11-27T09:23:13.411Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Listado de usuarios","level":"1.4","depth":1,"next":{"title":"Eliminar usuario","level":"1.5","depth":1,"path":"user_remove.md","ref":"user_remove.md","articles":[]},"previous":{"title":"App","level":"1.3","depth":1,"path":"app.md","ref":"app.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"users_list.md","mtime":"2018-11-27T10:03:24.001Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-11-27T10:41:50.574Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>
