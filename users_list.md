@@ -1,5 +1,17 @@
 # Listado de Usuarios
 
+# Descripción
+
+Se va a componer una tabla que muestre el listado de usarios del recurso `users` del servicio REST publicado en la dirección,
+
+https://my-user-manager.herokuapp.com/api-docs/
+
+![api](img/api.png)
+
+Se empleará el componente `<v-data-table>` de vuetify.
+
+![loading Users](img/Loading_Users.png)
+
 ## Desarrollo
 
 ### Definir store
@@ -208,6 +220,10 @@ added 1 package in 9.383s
 ```
 
 #### Configuración de axios y carga de datos
+
+Los datos del listado de usuario se sirven a través de la petición `GET /users`.
+
+![GET users](img/GET_users.png)
 
 Se crea el fichero `api.js` para definir la configuración de la conexión.
 

@@ -1,5 +1,13 @@
 # Crear Usuario
 
+## Ejercicio
+
+Utilizar el formulario creado para crear usuarios utilizado el servicio REST `PUT /users/{userId}`.
+
+![POST users](img/POST_users.png)
+
+![CreateUser](img/CreateUsers.png)
+
 ## Desarrollo
 
 ### Añadir botón para crear usuario

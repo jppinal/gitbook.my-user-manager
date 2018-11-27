@@ -1,5 +1,15 @@
 # Editar Usuario
 
+## Ejercicio
+
+Crear un formulario para cargar usuarios y editar usuarios utilizado los servicios REST `GET /users/{userId}` y `PUT /users/{userId}`.
+
+![GET users id](img/GET_users_id.png)
+
+![PUT users](img/PUT_users_id.png)
+
+![EditUser](img/EditUser.png)
+
 ## Desarrollo
 
 ### Cargar información del usuario

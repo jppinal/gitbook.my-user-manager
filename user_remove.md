@@ -1,5 +1,11 @@
 # Eliminar Usuario
 
+## Ejercicio
+
+Eliminar un usuario utilizado el servicio REST a través de la petición `DELETE /users/{userId}`.
+
+![DELETE users](img/DELETE_users_id.png)
+
 ## Desarrollo
 
 Se añade la acción de eliminar usuario al fichero del API y al módulo `usersList` del store.

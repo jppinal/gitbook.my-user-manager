@@ -261,7 +261,7 @@ Un componente vue permite abstraer funcionalidades y facilitar la gestión de lo
 </html>
 ```
 
----- Imagen on ciclo de vida
+![lifecycle](img/lifecycle.png)
 
 ## vuex
 
@@ -279,6 +279,8 @@ const store = new Vuex.Store({
   }
 })
 ```
+
+![vuex](img/vuex.png)
 
 ### mutations
 
