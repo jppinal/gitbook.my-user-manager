@@ -33,7 +33,9 @@ Para utilizar vue necesitamos:
 
 Indicamos a Vue el texto a renderizar a través de los _mustaches_ \{\{  \}\}
 
-(entorno de pruebas https://jsbin.com/?html,output)
+> Se emplea como entorno de pruebas https://jsbin.com/?html,output
+
+> CDN de vue https://www.jsdelivr.com/package/npm/vue
 
 ```html
 <html>
@@ -134,7 +136,7 @@ Vue es capaz de capturar los eventos generados por los elementos.
       <button v-on:click="onClick">show/hide</button>
     </div>
     <script>
-      new Vue({
+      var app = new Vue({
         el: "#app",
         data: {
           message: "hello vue!",
@@ -168,10 +170,10 @@ Vue permite también la vinculación en sentido de lectura y escritura.
       <input v-model="name"></button>
     </div>
     <script>
-      new Vue({
+      var app = new Vue({
         el: "#app",
         data: {
-          name: vue
+          name: 'vue'
         },
         computed: {
           message: {
@@ -179,11 +181,6 @@ Vue permite también la vinculación en sentido de lectura y escritura.
               if (!this.name) return `Hello stranger!`
               return `Hello ${this.name}!`
             }
-          }
-        },
-        methods: {
-          onClick () {
-            this.seen = !this.seen
           }
         }
       })
@@ -210,7 +207,7 @@ También podemos recorrer un array y mostar sus elementos.
       </ol>
     </div>
     <script>
-      new Vue({
+      var app = new Vue({
         el: "#app",
         data: {
           todos: [
@@ -237,7 +234,7 @@ Un componente vue permite abstraer funcionalidades y facilitar la gestión de lo
   <body>
     <div id="app">
       <ol>
-        <todo-item v-for="(todo, index) in todos" :todo="todo.text" :key="index">
+        <todo-item v-for="(todo, index) in todos" :todo="todo" :key="index">
         </todo-item>
       </ol>
     </div>
@@ -246,7 +243,7 @@ Un componente vue permite abstraer funcionalidades y facilitar la gestión de lo
         props: ['todo'],
         template: '<li>{{ todo.text }}</li>'
       })
-      new Vue({
+      var app = new Vue({
         el: "#app",
         data: {
           todos: [
