@@ -31,9 +31,9 @@ Para utilizar vue necesitamos:
 
 ### Hello vue
 
-JSbin or https://jsfiddle.net/chrisvfritz/50wL7mdz/
-
 Indicamos a Vue el texto a renderizar a través de los _mustaches_ \{\{  \}\}
+
+(entorno de pruebas https://jsbin.com/?html,output)
 
 ```html
 <html>
