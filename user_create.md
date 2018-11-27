@@ -4,6 +4,8 @@
 
 ### Añadir botón para crear usuario
 
+Se modifica `src/App.vue` para que muestre un botón que permita crear usuarios.
+
 **src/App.vue**
 
 ```html
@@ -63,6 +65,8 @@ export default new Router({
 ![create_user](img/create_user.png)
 
 ### Crear usuario
+
+Se crea la gestión de la petición `POST` y se añade la acción en el store.
 
 **src/api.js**
 

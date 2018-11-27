@@ -224,6 +224,316 @@
                                 <section class="normal markdown-section">
                                 
                                 <h1 id="introduction">Introduction</h1>
+<h2 id="vue">vue</h2>
+<h3 id="&#xBF;qu&#xE9;-es-vue">&#xBF;Qu&#xE9; es vue?</h3>
+<p>Vue (/vju&#x2D0;/) es un framework para construir interfaces de usuario (UI).</p>
+<h3 id="instalaci&#xF3;n">Instalaci&#xF3;n</h3>
+<p>Para utilizar vue necesitamos:</p>
+<ul>
+<li><p>incluir la libreria en nuestra p&#xE1;gina</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js&quot;</span>&gt;</span><span class="undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+</code></pre>
+</li>
+<li><p>definir el elemento de carga</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;app&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+</code></pre>
+</li>
+<li><p>crear la instancia de vue.</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="actionscript">
+<span class="hljs-keyword">new</span> Vue({
+  el: <span class="hljs-string">&quot;#app&quot;</span>
+})
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+</code></pre>
+</li>
+</ul>
+<h3 id="hello-vue">Hello vue</h3>
+<p>JSbin or <a href="https://jsfiddle.net/chrisvfritz/50wL7mdz/" target="_blank">https://jsfiddle.net/chrisvfritz/50wL7mdz/</a></p>
+<p>Indicamos a Vue el texto a renderizar a trav&#xE9;s de los <em>mustaches</em> {{  }}</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js&quot;</span>&gt;</span><span class="undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;app&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>{{ message }}<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="actionscript">
+      <span class="hljs-keyword">var</span> app = <span class="hljs-keyword">new</span> Vue({
+        el: <span class="hljs-string">&quot;#app&quot;</span>,
+        data: {
+          message: <span class="hljs-string">&quot;hello vue!&quot;</span>
+        }
+      })
+    </span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span>
+</code></pre>
+<h3 id="vincular-atributos-directiva-v-bind-">Vincular atributos, directiva <code>v-bind</code> (:)</h3>
+<p>Una directiva vue proporciona herramientas para controlar el DOM de forma reactiva. Comienzan con el prefijo <code>v-</code>, indicando que pertenecen a vue.</p>
+<p>Por ejemplo <code>v-bind</code> vincula cualquier atributo del elemento con el valor definido.</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js&quot;</span>&gt;</span><span class="undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;app&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>{{ message }}<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">v-bind:title</span>=<span class="hljs-string">&quot;when&quot;</span>&gt;</span>Hover your mouse over here<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="actionscript">
+      <span class="hljs-keyword">var</span> app = <span class="hljs-keyword">new</span> Vue({
+        el: <span class="hljs-string">&quot;#app&quot;</span>,
+        data: {
+          message: <span class="hljs-string">&quot;hello vue!&quot;</span>,
+          when: `You loaded <span class="hljs-keyword">this</span> page on ${<span class="hljs-keyword">new</span> Date().toLocaleString()}`
+        }
+      })
+    </span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span>
+</code></pre>
+<h3 id="condicionales-directiva-v-if">Condicionales, directiva <code>v-if</code></h3>
+<p>Vue puede controlar la estructura del DOM, mostrando elemento de forma condicional.</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js&quot;</span>&gt;</span><span class="undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;app&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>{{ message }}<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">v-if</span>=<span class="hljs-string">&quot;seen&quot;</span>&gt;</span>Now you see me<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="actionscript">
+      <span class="hljs-keyword">new</span> Vue({
+        el: <span class="hljs-string">&quot;#app&quot;</span>,
+        data: {
+          message: <span class="hljs-string">&quot;hello vue!&quot;</span>,
+          seen: <span class="hljs-literal">true</span>
+        }
+      })
+    </span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span>
+</code></pre>
+<p>consola</p>
+<pre><code class="lang-javaScript">app.seen = <span class="hljs-literal">false</span>
+</code></pre>
+<h3 id="eventos-directiva-v-on-">Eventos, directiva <code>v-on</code> (@)</h3>
+<p>Vue es capaz de capturar los eventos generados por los elementos.</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js&quot;</span>&gt;</span><span class="undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;app&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>{{ message }}<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">v-if</span>=<span class="hljs-string">&quot;seen&quot;</span>&gt;</span>Now you see me<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">v-on:click</span>=<span class="hljs-string">&quot;onClick&quot;</span>&gt;</span>show/hide<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="actionscript">
+      <span class="hljs-keyword">new</span> Vue({
+        el: <span class="hljs-string">&quot;#app&quot;</span>,
+        data: {
+          message: <span class="hljs-string">&quot;hello vue!&quot;</span>,
+          seen: <span class="hljs-literal">true</span>
+        },
+        methods: {
+          onClick () {
+            <span class="hljs-keyword">this</span>.seen = !<span class="hljs-keyword">this</span>.seen
+          }
+        }
+      })
+    </span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span>
+</code></pre>
+<p>Reemplazar <code>v-on:</code> por <code>@</code></p>
+<h3 id="two-way-binding-directiva-v-model">Two-way binding, directiva <code>v-model</code></h3>
+<p>Vue permite tambi&#xE9;n la vinculaci&#xF3;n en sentido de lectura y escritura.</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js&quot;</span>&gt;</span><span class="undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;app&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>{{ message }}<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">v-model</span>=<span class="hljs-string">&quot;name&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="javascript">
+      <span class="hljs-keyword">new</span> Vue({
+        el: <span class="hljs-string">&quot;#app&quot;</span>,
+        data: {
+          name: vue
+        },
+        computed: {
+          message: {
+            get () {
+              <span class="hljs-keyword">if</span> (!<span class="hljs-keyword">this</span>.name) <span class="hljs-keyword">return</span> <span class="hljs-string">`Hello stranger!`</span>
+              <span class="hljs-keyword">return</span> <span class="hljs-string">`Hello <span class="hljs-subst">${this.name}</span>!`</span>
+            }
+          }
+        },
+        methods: {
+          onClick () {
+            <span class="hljs-keyword">this</span>.seen = !<span class="hljs-keyword">this</span>.seen
+          }
+        }
+      })
+    </span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span>
+</code></pre>
+<h3 id="bucles-directiva-v-for">Bucles, directiva <code>v-for</code></h3>
+<p>Tambi&#xE9;n podemos recorrer un array y mostar sus elementos.</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js&quot;</span>&gt;</span><span class="undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;app&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">ol</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">v-for</span>=<span class="hljs-string">&quot;todo in todos&quot;</span>&gt;</span>
+          {{ todo.text }}
+        <span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">ol</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="actionscript">
+      <span class="hljs-keyword">new</span> Vue({
+        el: <span class="hljs-string">&quot;#app&quot;</span>,
+        data: {
+          todos: [
+            { text: <span class="hljs-string">&apos;Learn JavaScript&apos;</span> },
+            { text: <span class="hljs-string">&apos;Learn Vue&apos;</span> },
+            { text: <span class="hljs-string">&apos;Build something awesome&apos;</span> }
+          ]
+        }
+      })
+    </span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span>
+</code></pre>
+<h3 id="componentes">Componentes</h3>
+<p>Un componente vue permite abstraer funcionalidades y facilitar la gesti&#xF3;n de los proyectos, por ejemplo permitiendo la reusabilidad.</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js&quot;</span>&gt;</span><span class="undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;app&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">ol</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">todo-item</span> <span class="hljs-attr">v-for</span>=<span class="hljs-string">&quot;(todo, index) in todos&quot;</span> <span class="hljs-attr">:todo</span>=<span class="hljs-string">&quot;todo.text&quot;</span> <span class="hljs-attr">:key</span>=<span class="hljs-string">&quot;index&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">todo-item</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">ol</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="actionscript">
+      Vue.component(<span class="hljs-string">&apos;todo-item&apos;</span>, {
+        props: [<span class="hljs-string">&apos;todo&apos;</span>],
+        template: <span class="hljs-string">&apos;&lt;li&gt;{{ todo.text }}&lt;/li&gt;&apos;</span>
+      })
+      <span class="hljs-keyword">new</span> Vue({
+        el: <span class="hljs-string">&quot;#app&quot;</span>,
+        data: {
+          todos: [
+            { text: <span class="hljs-string">&apos;Learn JavaScript&apos;</span> },
+            { text: <span class="hljs-string">&apos;Learn Vue&apos;</span> },
+            { text: <span class="hljs-string">&apos;Build something awesome&apos;</span> }
+          ]
+        }
+      })
+    </span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span>
+</code></pre>
+<p>---- Imagen on ciclo de vida</p>
+<h2 id="vuex">vuex</h2>
+<p>Vuex permite gestionar el estado de la aplicaci&#xF3;n, tambi&#xE9;n conocido como store.</p>
+<ul>
+<li>Es reactivo, ante cambios en el estado actualiza autom&#xE1;ticamente los componentes.</li>
+<li>Define un flujo unidireccional, a trav&#xE9;s de mutaciones, para cambiar el estado.</li>
+</ul>
+<p>-- buscar imagen con flujo</p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">const</span> store = <span class="hljs-keyword">new</span> Vuex.Store({
+  state: {
+    count: <span class="hljs-number">0</span>
+  }
+})
+</code></pre>
+<h3 id="mutations">mutations</h3>
+<p>Las mutaciones modifican el estado de la aplicaci&#xF3;n.</p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">const</span> store = <span class="hljs-keyword">new</span> Vuex.Store({
+  state: {
+    count: <span class="hljs-number">1</span>
+  },
+  mutations: {
+    increment (state) {
+      state.count++
+    }
+  }
+})
+</code></pre>
+<pre><code class="lang-javascript">store.commit(<span class="hljs-string">&apos;increment&apos;</span>)
+</code></pre>
+<h3 id="actions">actions</h3>
+<p>Las acciones son procesos as&#xED;ncronos que ejecutan mutaciones.</p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">const</span> store = <span class="hljs-keyword">new</span> Vuex.Store({
+  state: {
+    count: <span class="hljs-number">0</span>
+  },
+  mutations: {
+    increment (state) {
+      state.count++
+    }
+  },
+  actions: {
+    increment ({ commit }) {
+      commit(<span class="hljs-string">&apos;increment&apos;</span>)
+    }
+  }
+})
+</code></pre>
+<pre><code class="lang-javascript">store.dispatch(<span class="hljs-string">&apos;increment&apos;</span>)
+</code></pre>
+<h3 id="getters">getters</h3>
+<p>Permiten obtener valores calculados a partir del estado del store.</p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">const</span> store = <span class="hljs-keyword">new</span> Vuex.Store({
+  state: {
+    todos: [
+      { id: <span class="hljs-number">1</span>, text: <span class="hljs-string">&apos;...&apos;</span>, done: <span class="hljs-literal">true</span> },
+      { id: <span class="hljs-number">2</span>, text: <span class="hljs-string">&apos;...&apos;</span>, done: <span class="hljs-literal">false</span> }
+    ]
+  },
+  getters: {
+    doneTodos: state =&gt; {
+      <span class="hljs-keyword">return</span> state.todos.filter(todo =&gt; todo.done)
+    }
+  }
+})
+</code></pre>
+<pre><code class="lang-javascript">store.getters.doneTodos
+</code></pre>
+<h2 id="vue-router">vue router</h2>
+<p>Vue router facilita la creacci&#xF3;n de SPA (Single Page Applications).</p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">const</span> router = <span class="hljs-keyword">new</span> VueRouter({
+  routes: [
+    <span class="hljs-comment">// the following object is a route record</span>
+    { path: <span class="hljs-string">&apos;/foo&apos;</span>, component: Foo,
+      children: [
+        <span class="hljs-comment">// this is also a route record</span>
+        { path: <span class="hljs-string">&apos;bar&apos;</span>, component: Bar }
+      ]
+    }
+  ]
+})
+</code></pre>
+<h3 id="router-view">router-view</h3>
+<p>El componente <code>&lt;router-view&gt;</code> renderiza el componente asignado a la ruta.</p>
+<h3 id="router-link">router-link</h3>
+<p>El componente <code>&lt;router-link&gt;</code> permite la navegaci&#xF3;n dentro de la aplicaci&#xF3;n.</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">router-link</span> <span class="hljs-attr">to</span>=<span class="hljs-string">&quot;/foo&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">a</span>&gt;</span>/foo<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">router-link</span>&gt;</span>
+</code></pre>
 
                                 
                                 </section>
@@ -263,7 +573,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Introducción","level":"1.1","depth":1,"next":{"title":"Instalación","level":"1.2","depth":1,"path":"installation.md","ref":"installation.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"README.md","mtime":"2018-11-26T18:36:25.716Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-11-26T19:20:22.145Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Introducción","level":"1.1","depth":1,"next":{"title":"Instalación","level":"1.2","depth":1,"path":"installation.md","ref":"installation.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"README.md","mtime":"2018-11-27T07:36:35.621Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-11-27T07:05:36.547Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>

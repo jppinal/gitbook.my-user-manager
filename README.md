@@ -33,7 +33,7 @@ Para utilizar vue necesitamos:
 
 JSbin or https://jsfiddle.net/chrisvfritz/50wL7mdz/
 
-Indicamos a Vue el texto a renderizar a través de los _mustaches_ {{  }}
+Indicamos a Vue el texto a renderizar a través de los _mustaches_ \{\{  \}\}
 
 ```html
 <html>
@@ -272,6 +272,114 @@ Vuex permite gestionar el estado de la aplicación, también conocido como store
 
 -- buscar imagen con flujo
 
+```javascript
+const store = new Vuex.Store({
+  state: {
+    count: 0
+  }
+})
+```
+
+### mutations
+
+Las mutaciones modifican el estado de la aplicación.
+
+```javascript
+const store = new Vuex.Store({
+  state: {
+    count: 1
+  },
+  mutations: {
+    increment (state) {
+      state.count++
+    }
+  }
+})
+```
+
+```javascript
+store.commit('increment')
+```
+
+### actions
+
+Las acciones son procesos asíncronos que ejecutan mutaciones.
+
+```javascript
+const store = new Vuex.Store({
+  state: {
+    count: 0
+  },
+  mutations: {
+    increment (state) {
+      state.count++
+    }
+  },
+  actions: {
+    increment ({ commit }) {
+      commit('increment')
+    }
+  }
+})
+```
+
+```javascript
+store.dispatch('increment')
+```
+
+### getters
+
+Permiten obtener valores calculados a partir del estado del store.
+
+```javascript
+const store = new Vuex.Store({
+  state: {
+    todos: [
+      { id: 1, text: '...', done: true },
+      { id: 2, text: '...', done: false }
+    ]
+  },
+  getters: {
+    doneTodos: state => {
+      return state.todos.filter(todo => todo.done)
+    }
+  }
+})
+```
+
+```javascript
+store.getters.doneTodos
+```
+
 ## vue router
 
 Vue router facilita la creacción de SPA (Single Page Applications).
+
+```javascript
+const router = new VueRouter({
+  routes: [
+    // the following object is a route record
+    { path: '/foo', component: Foo,
+      children: [
+        // this is also a route record
+        { path: 'bar', component: Bar }
+      ]
+    }
+  ]
+})
+```
+
+### router-view
+
+El componente `<router-view>` renderiza el componente asignado a la ruta.
+
+
+### router-link
+
+El componente `<router-link>` permite la navegación dentro de la aplicación.
+
+```html
+<router-link to="/foo">
+  <a>/foo</a>
+</router-link>
+```
