@@ -18,7 +18,7 @@ Se empleará el componente `<v-data-table>` de vuetify.
 
 Primero vamos a reestructurar el store generado automáticamente. Para ello, creamos la carpeta `src/store`, moveremos el fichero `store.js` a la carpeta y se renombrará a `index.js`.
 
-#### Módulo `userList`
+#### Módulo `usersList`
 
 Creamos el módulo del listado de usuario (`src/store/usersList.js`).
 
@@ -83,9 +83,9 @@ export default new Vuex.Store({
 })
 ```
 
-### Añadir Componente `UserList`
+### Añadir Componente `UsersList`
 
-A continuación crearemos el componente `UserList` encargado de mostrar el listado de los usuarios. Para ello se crea el fichero `src/components/UsersList.vue`.
+A continuación crearemos el componente `UsersList` encargado de mostrar el listado de los usuarios. Para ello se crea el fichero `src/components/UsersList.vue`.
 
 **src/components/UsersList.vue**
 
@@ -95,11 +95,11 @@ A continuación crearemos el componente `UserList` encargado de mostrar el lista
 </template>
 ```
 
-Se debe modificar `src/views/home.vue` para que cargue el componente `UsersList`.
+Se debe modificar `src/views/Home.vue` para que cargue el componente `UsersList`.
 
 ```html
 <template>
-  <div class="home">
+  <div class="Home">
     <UsersList />
   </div>
 </template>
@@ -109,7 +109,7 @@ Se debe modificar `src/views/home.vue` para que cargue el componente `UsersList`
 import UsersList from '@/components/UsersList.vue'
 
 export default {
-  name: 'home',
+  name: 'Home',
   components: {
     UsersList
   }
@@ -119,9 +119,9 @@ export default {
 
 ![component usersList View](img/User_lists_draft.png)
 
-### Componente `UserList`
+### Componente `UsersList`
 
-A continuación modificaremos el componente `UserList` para implementar las funcionalidades encargadas de mostrar el listado de los usuarios.
+A continuación modificaremos el componente `UsersList` para implementar las funcionalidades encargadas de mostrar el listado de los usuarios.
 
 **src/components/UsersList.vue**
 

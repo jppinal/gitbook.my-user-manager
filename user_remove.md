@@ -54,7 +54,7 @@ export default {
 
 Por último se ejecuta la acción definida en el método `onRemove` definido en el componente `UsersList`.
 
-**src/components/UsersList.js**
+**src/components/UsersList.vue**
 
 ```html
 ...
