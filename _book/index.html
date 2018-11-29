@@ -191,6 +191,19 @@
             
         </li>
     
+        <li class="chapter " data-level="1.9" data-path="contact.html">
+            
+                <a href="contact.html">
+            
+                    
+                    Contacto
+            
+                </a>
+            
+
+            
+        </li>
+    
 
     
 
@@ -261,8 +274,11 @@
 </li>
 </ul>
 <h3 id="hello-vue">Hello vue</h3>
-<p>JSbin or <a href="https://jsfiddle.net/chrisvfritz/50wL7mdz/" target="_blank">https://jsfiddle.net/chrisvfritz/50wL7mdz/</a></p>
 <p>Indicamos a Vue el texto a renderizar a trav&#xE9;s de los <em>mustaches</em> {{  }}</p>
+<blockquote>
+<p>Se emplea como entorno de pruebas <a href="https://jsbin.com/?html,output" target="_blank">https://jsbin.com/?html,output</a></p>
+<p>CDN de vue <a href="https://www.jsdelivr.com/package/npm/vue" target="_blank">https://www.jsdelivr.com/package/npm/vue</a></p>
+</blockquote>
 <pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js&quot;</span>&gt;</span><span class="undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
@@ -345,7 +361,7 @@
       <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">v-on:click</span>=<span class="hljs-string">&quot;onClick&quot;</span>&gt;</span>show/hide<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
     <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="actionscript">
-      <span class="hljs-keyword">new</span> Vue({
+      <span class="hljs-keyword">var</span> app = <span class="hljs-keyword">new</span> Vue({
         el: <span class="hljs-string">&quot;#app&quot;</span>,
         data: {
           message: <span class="hljs-string">&quot;hello vue!&quot;</span>,
@@ -371,13 +387,13 @@
   <span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;app&quot;</span>&gt;</span>
       <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>{{ message }}<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
-      <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">v-model</span>=<span class="hljs-string">&quot;name&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">v-model</span>=<span class="hljs-string">&quot;name&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">input</span>&gt;</span>
     <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="javascript">
-      <span class="hljs-keyword">new</span> Vue({
+      <span class="hljs-keyword">var</span> app = <span class="hljs-keyword">new</span> Vue({
         el: <span class="hljs-string">&quot;#app&quot;</span>,
         data: {
-          name: vue
+          name: <span class="hljs-string">&apos;vue&apos;</span>
         },
         computed: {
           message: {
@@ -385,11 +401,6 @@
               <span class="hljs-keyword">if</span> (!<span class="hljs-keyword">this</span>.name) <span class="hljs-keyword">return</span> <span class="hljs-string">`Hello stranger!`</span>
               <span class="hljs-keyword">return</span> <span class="hljs-string">`Hello <span class="hljs-subst">${this.name}</span>!`</span>
             }
-          }
-        },
-        methods: {
-          onClick () {
-            <span class="hljs-keyword">this</span>.seen = !<span class="hljs-keyword">this</span>.seen
           }
         }
       })
@@ -412,7 +423,7 @@
       <span class="hljs-tag">&lt;/<span class="hljs-name">ol</span>&gt;</span>
     <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="actionscript">
-      <span class="hljs-keyword">new</span> Vue({
+      <span class="hljs-keyword">var</span> app = <span class="hljs-keyword">new</span> Vue({
         el: <span class="hljs-string">&quot;#app&quot;</span>,
         data: {
           todos: [
@@ -435,7 +446,7 @@
   <span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;app&quot;</span>&gt;</span>
       <span class="hljs-tag">&lt;<span class="hljs-name">ol</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">todo-item</span> <span class="hljs-attr">v-for</span>=<span class="hljs-string">&quot;(todo, index) in todos&quot;</span> <span class="hljs-attr">:todo</span>=<span class="hljs-string">&quot;todo.text&quot;</span> <span class="hljs-attr">:key</span>=<span class="hljs-string">&quot;index&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">todo-item</span> <span class="hljs-attr">v-for</span>=<span class="hljs-string">&quot;(todo, index) in todos&quot;</span> <span class="hljs-attr">:todo</span>=<span class="hljs-string">&quot;todo&quot;</span> <span class="hljs-attr">:key</span>=<span class="hljs-string">&quot;index&quot;</span>&gt;</span>
         <span class="hljs-tag">&lt;/<span class="hljs-name">todo-item</span>&gt;</span>
       <span class="hljs-tag">&lt;/<span class="hljs-name">ol</span>&gt;</span>
     <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
@@ -444,7 +455,7 @@
         props: [<span class="hljs-string">&apos;todo&apos;</span>],
         template: <span class="hljs-string">&apos;&lt;li&gt;{{ todo.text }}&lt;/li&gt;&apos;</span>
       })
-      <span class="hljs-keyword">new</span> Vue({
+      <span class="hljs-keyword">var</span> app = <span class="hljs-keyword">new</span> Vue({
         el: <span class="hljs-string">&quot;#app&quot;</span>,
         data: {
           todos: [
@@ -477,7 +488,7 @@
 <p>Las mutaciones modifican el estado de la aplicaci&#xF3;n.</p>
 <pre><code class="lang-javascript"><span class="hljs-keyword">const</span> store = <span class="hljs-keyword">new</span> Vuex.Store({
   state: {
-    count: <span class="hljs-number">1</span>
+    count: <span class="hljs-number">0</span>
   },
   mutations: {
     increment (state) {
@@ -587,7 +598,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Introducción","level":"1.1","depth":1,"next":{"title":"Instalación","level":"1.2","depth":1,"path":"installation.md","ref":"installation.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"README.md","mtime":"2018-11-27T09:47:44.039Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-11-27T10:41:50.574Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Introducción","level":"1.1","depth":1,"next":{"title":"Instalación","level":"1.2","depth":1,"path":"installation.md","ref":"installation.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"README.md","mtime":"2018-11-28T11:38:41.226Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-11-29T21:35:42.902Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>

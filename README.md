@@ -167,7 +167,7 @@ Vue permite también la vinculación en sentido de lectura y escritura.
   <body>
     <div id="app">
       <p>{{ message }}</p>
-      <input v-model="name"></button>
+      <input v-model="name"></input>
     </div>
     <script>
       var app = new Vue({
@@ -286,7 +286,7 @@ Las mutaciones modifican el estado de la aplicación.
 ```javascript
 const store = new Vuex.Store({
   state: {
-    count: 1
+    count: 0
   },
   mutations: {
     increment (state) {
