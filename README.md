@@ -286,7 +286,7 @@ Las mutaciones modifican el estado de la aplicación.
 ```javascript
 const store = new Vuex.Store({
   state: {
-    count: 1
+    count: 0
   },
   mutations: {
     increment (state) {

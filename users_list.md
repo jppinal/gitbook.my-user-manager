@@ -1,6 +1,6 @@
 # Listado de Usuarios
 
-# Descripción
+## Descripción
 
 Se va a componer una tabla que muestre el listado de usarios del recurso `users` del servicio REST publicado en la dirección,
 
